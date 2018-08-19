@@ -1,0 +1,28 @@
+body {
+    height: 100%
+}
+
+.box {
+    height: 100px;
+    background-color: brown;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "nav main-doc";
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.main-doc {
+    grid-area: main-doc;
+
+}
