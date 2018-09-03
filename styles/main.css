@@ -8,6 +8,9 @@ body {
 }
 
 .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
@@ -16,12 +19,28 @@ body {
 
 .nav {
     grid-area: nav;
+    border-right: 2px solid gray;
+    position: sticky;
+    top: 0; /*to make it stick to the top of the screen*/
+    height: 100vh; /*make the height equal to 100 view height*/
 }
 
 .nav ul {
     list-style: none;
+    width: 100%;
+    margin: 0;
+    padding:0;
 }
 
+.nav li{
+    border-top: 1px solid gray;
+    width: 100%;
+}
+
+.nav li:last-of-type{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
 .main-doc {
     grid-area: main-doc;
 
