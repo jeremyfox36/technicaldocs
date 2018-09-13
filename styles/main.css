@@ -1,47 +1,73 @@
-body {
-    height: 100%
+
+:root{
+    --navbar_width:   300px;/*sets navbar width and main panel margin*/
+}
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
 }
 
-.box {
-    height: 100px;
-    background-color: brown;
-}
-
-.container {
-    margin: 0;
+div.nav{
     padding: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-    "nav main-doc";
-}
-
-.nav {
-    grid-area: nav;
-    border-right: 2px solid gray;
-    position: sticky;
-    top: 0; /*to make it stick to the top of the screen*/
-    height: 100vh; /*make the height equal to 100 view height*/
-}
-
-.nav ul {
-    list-style: none;
-    width: 100%;
     margin: 0;
-    padding:0;
+    height: 100%; /*make the height equal to 100% view height*/
+    text-decoration: none;
+    top: 0;
+    border-right: 2px solid gray;
+    background-color: white;
+    width: var(--navbar_width);
+    overflow: auto;
+    position: fixed;
 }
-
-.nav li{
+.nav a{
+    padding: 10px;
+    display: block;
     border-top: 1px solid gray;
-    width: 100%;
+    height: 30px;
 }
 
-.nav li:last-of-type{
+.nav a:last-of-type{
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
-.main-doc {
-    grid-area: main-doc;
 
+div.main-doc {
+    padding-left: 20px;
+    margin-left: var(--navbar_width);
+    height: 5000px;
 }
+
+.box {
+    height: 100%;
+    border: 3px solid grey;
+    border-radius: 5px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    div.nav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    div.nav a {
+        float: left;
+        border-bottom: solid gray 1px;
+        
+    }
+    div.main-doc {
+        margin-left: 0;
+    }
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
